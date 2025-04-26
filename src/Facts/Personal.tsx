@@ -1,5 +1,5 @@
 import InputText from "../components/InputText";
-import useLocalState from "../hooks/useLocalState"; // adjust path as needed
+import useLocalState from "../hooks/useLocalState"; 
 
 function Personal() {
   const [first, setFirst] = useLocalState("personal.first", "");
