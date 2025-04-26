@@ -17,7 +17,7 @@ function Editor() {
     skills: <Skills />,
     languages: <Languages />,
   };
-  const [active, setActive] = useState<keyof typeof sections>("personal");
+  const [active, setActive] = useState<keyof typeof sections>("work");
   const handleButtonClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     setActive(event.currentTarget.value as keyof typeof sections);
   };
