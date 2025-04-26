@@ -1,6 +1,6 @@
 function Preview() {
     return (
-      <div className="preview">
+      <div id="preview">
         <h1 className="text-3xl font-bold">Preview</h1>
         <p>This is the preview component.</p>
       </div>
