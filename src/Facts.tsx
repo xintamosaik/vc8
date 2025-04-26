@@ -6,7 +6,7 @@ import Skills from "./Facts/Skills.tsx";
 import Work from "./Facts/Work.tsx";
 import Education from "./Facts/Education.tsx";
 import Languages from "./Facts/Languages.tsx";
-
+import Button from "./components/Button";
 function Editor() {
   const sections = {
     personal: <Personal />,
@@ -24,27 +24,28 @@ function Editor() {
   return (
     <div id="editor" className="flex flex-col gap-4">
       <nav className="flex space-x-4">
-        <button value="personal" onClick={handleButtonClick}>
-          Personal
-        </button>
-        <button value="contact" onClick={handleButtonClick}>
+        
+        <Button value="personal"  onClick={handleButtonClick}> 
+            Personal
+        </Button>
+        <Button value="contact" onClick={handleButtonClick}>
           Contact
-        </button>
-        <button value="summary" onClick={handleButtonClick}>
-          Summary
-        </button>
-        <button value="work" onClick={handleButtonClick}>
-          Work
-        </button>
-        <button value="education" onClick={handleButtonClick}>
-          Education
-        </button>
-        <button value="skills" onClick={handleButtonClick}>
-          Skills
-        </button>
-        <button value="languages" onClick={handleButtonClick}>
-          Languages
-        </button>
+        </Button>
+        <Button value="summary" onClick={handleButtonClick}>
+            Summary
+        </Button>
+        <Button value="work" onClick={handleButtonClick}>
+            Work
+        </Button>
+        <Button value="education" onClick={handleButtonClick}>
+            Education
+        </Button>
+        <Button value="skills" onClick={handleButtonClick}>
+            Skills
+        </Button>
+        <Button value="languages" onClick={handleButtonClick}>
+            Languages
+        </Button>
       </nav>
 
       <div className="section">{sections[active]}</div>

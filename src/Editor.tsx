@@ -3,7 +3,7 @@ import Resumes from "./Resumes.tsx";
 import Facts from "./Facts.tsx";
 import Styles from "./Styles.tsx";
 import Settings from "./Settings.tsx";
-
+import Button from "./components/Button";
 function Editor() {
   const sections = {
     resumes: <Resumes />,
@@ -18,18 +18,18 @@ function Editor() {
   return (
     <div id="editor" className="flex flex-col gap-4">
       <nav className="flex space-x-4">
-        <button value="resumes" onClick={handleButtonClick}>
+        <Button value="resumes" onClick={handleButtonClick}>
           Resumes
-        </button>
-        <button value="facts" onClick={handleButtonClick}>
+        </Button>
+        <Button value="facts" onClick={handleButtonClick}>
           Facts
-        </button>
-        <button value="styles" onClick={handleButtonClick}>
+        </Button>
+        <Button value="styles" onClick={handleButtonClick}>
           Styles
-        </button>
-        <button value="settings" onClick={handleButtonClick}>
+        </Button>
+        <Button value="settings" onClick={handleButtonClick}>
           Settings
-        </button>
+        </Button>
       </nav>
 
       <div className="section">{sections[active]}</div>
