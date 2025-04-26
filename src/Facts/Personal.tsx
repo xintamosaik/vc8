@@ -1,48 +1,48 @@
 import InputText from "../components/InputText";
 import useLocalState from "../hooks/useLocalState"; // adjust path as needed
+
 function Personal() {
   const [first, setFirst] = useLocalState("personal.first", "");
   const [last, setLast] = useLocalState("personal.last", "");
   const [location, setLocation] = useLocalState("personal.location", "");
 
-    return (
-      <div id="personal" className="flex flex-col gap-4">
-        
-        <h1 className="text-3xl font-bold">Personal</h1>
-        <label htmlFor="first">
-          First Name
-        </label>
-        <InputText
-          name="first"
-          id="first"  
-          className="border-2 border-gray-300 rounded-md p-2"
-          value={first}
-          onChange={(e: React.ChangeEvent<HTMLInputElement>) => setFirst(e.target.value)}
-        />
-        <label htmlFor="last">
-          Last Name
-        </label>
-        <InputText
-          name="last"
-          id="last"
-          className="border-2 border-gray-300 rounded-md p-2"
-          value={last}
-          onChange={(e: React.ChangeEvent<HTMLInputElement>) => setLast(e.target.value)}
+  const fields = [
+    {
+      key: "first",
+      label: "First Name",
+      value: first,
+      setValue: setFirst,
+    },
+    {
+      key: "last",
+      label: "Last Name",
+      value: last,
+      setValue: setLast,
+    },
+    {
+      key: "location",
+      label: "Location",
+      value: location,
+      setValue: setLocation,
+    },
+  ];
 
-        />
-        <label htmlFor="location">
-            Location
-        </label>
-        <InputText
-          name="location"
-          id="location"
-          className="border-2 border-gray-300 rounded-md p-2"
-          value={location}
-          onChange={(e: React.ChangeEvent<HTMLInputElement>) => setLocation(e.target.value)}
-        />
-        
-      </div>
-    );
-  }
-  
-  export default Personal;
+  return (
+    <div id="personal" className="flex flex-col gap-4">
+    
+      {fields.map(({ key, label, value, setValue }) => (
+        <div key={key} className="flex flex-col gap-1">
+          <label htmlFor={key}>{label}</label>
+          <InputText
+            name={key}
+            id={key}
+            value={value}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => setValue(e.target.value)}
+          />
+        </div>
+      ))}
+    </div>
+  );
+}
+
+export default Personal;

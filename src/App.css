@@ -1,3 +1,11 @@
 #root {
   padding: 2rem;
 }
+span.dash::before {
+    
+    /* we want a nice round point between parts*/
+    content: '\00b7';
+    /* and 1ch space on each side */
+    padding: 0 1ch;
+  
+}
