@@ -3,7 +3,12 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.tsx'
 
-createRoot(document.getElementById('root')!).render(
+declare global {
+  interface Window {
+    root: HTMLDivElement 
+  }
+}
+createRoot(window.root).render(
   <StrictMode>
     <App />
   </StrictMode>,

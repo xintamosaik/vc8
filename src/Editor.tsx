@@ -11,7 +11,7 @@ function Editor() {
     styles: <Styles />,
     settings: <Settings />,
   };
-  const [active, setActive] = useState<keyof typeof sections>("resumes");
+  const [active, setActive] = useState<keyof typeof sections>("facts");
   const handleButtonClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     setActive(event.currentTarget.value as keyof typeof sections);
   };
