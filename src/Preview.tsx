@@ -1,14 +1,14 @@
 import useLocalState from "./hooks/useLocalState"; // adjust path as needed
 function Preview() {
-  const [first] = useLocalState("personal.first", "[not set]");
-  const [last] = useLocalState("personal.last", "[not set]");
-  const [location] = useLocalState("personal.location", "[not set]");
-  const [email] = useLocalState("contact.email", "[not set]");
+  const [first] = useLocalState("personal.first", "");
+  const [last] = useLocalState("personal.last", "");
+  const [location] = useLocalState("personal.location", "");
+  const [email] = useLocalState("contact.email", "");
 
-  const [linkedin] = useLocalState("contact.linkedin", "[not set]");
-  const [github] = useLocalState("contact.github", "[not set]");
-  const [title] = useLocalState("summary.title", "[not set]");
-  const [summary] = useLocalState("summary.description", "[not set]");
+  const [linkedin] = useLocalState("contact.linkedin", "");
+  const [github] = useLocalState("contact.github", "");
+  const [title] = useLocalState("summary.title", "");
+  const [summary] = useLocalState("summary.description", "");
 
   return (
     <div id="preview">
